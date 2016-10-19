@@ -8,10 +8,7 @@ This project is based on the material for the book
    David J. Barnes and Michael Kölling
    Pearson Education, 2012
 
-   
-This project is a simple framework for an adventure game. In this version,
-it has a few rooms and the ability for a player to walk between these rooms.
-Player can also pick up items and scream.
-
-To start this application, create an instance of class "Game" and call its
-"play" method.
+This game was made by me during my introductary course in Computer Science. 
+The exercise gave us a working base and the instructed us how to add to it.
+The story and locations are all written by me but the parser and 
+command classes were mostly pre-made.
