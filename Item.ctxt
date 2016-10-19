@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=weigth\ name\ description
+comment0.target=Item(int,\ java.lang.String,\ java.lang.String)
+comment0.text=\n\ The\ constructor\ for\ class\ Item,\ takes\ three\ parameters.\n\ @param\ weigth\ The\ weigth\ of\ the\ item.\n\ @param\ name\ The\ name\ of\ the\ item.\n\ @param\ description\ A\ description\ of\ the\ item.\n
+comment1.params=
+comment1.target=java.lang.String\ getDescription()
+comment1.text=\n\ This\ method\ returns\ the\ description\ of\ the\ item.\n\ @return\ The\ description\ of\ the\ item.\n
+comment2.params=
+comment2.target=int\ getWeigth()
+comment2.text=\n\ This\ method\ returns\ the\ weigth\ of\ the\ item.\n\ @return\ The\ weigth\ of\ the\ item.\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\n\ This\ method\ returns\ the\ name\ of\ the\ item.\n\ @\ The\ name\ of\ the\ item.\n
+numComments=4
