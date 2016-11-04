@@ -11,4 +11,4 @@ This project is based on the material for the book
 This game was made by me during my introductary course in Computer Science. 
 The exercise gave us a working base and the instructed us how to add to it.
 The story and locations are all written by me but the parser and 
-command classes were mostly pre-made.
+command classes were partly pre-made.
