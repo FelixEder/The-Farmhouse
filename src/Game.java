@@ -26,13 +26,13 @@ public class Game
     private Console console;
     
     /**
-     * Create the game and initialise its internal map.
+     * Create the game and initialize its internal map.
      */
     public Game(String playerName) 
     {
         player = new Player(playerName);
-        parser = new Parser();
         console = new Console();
+        parser = new Parser(console);
         createRooms();
     }
 
