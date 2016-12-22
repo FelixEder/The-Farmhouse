@@ -2,12 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/ant-javafx.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/dt.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/javafx-mx.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/jconsole.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/packager.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/sa-jdi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_112/lib/tools.jar"/>
+	<classpathentry kind="lib" path="/home/felix/Dokument/Projekt/ConsoleGUI/Console.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
