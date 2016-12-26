@@ -5,7 +5,7 @@
  *  To play this game, create an instance of this class and call the "play"
  *  method.
  * 
- *  This main class creates and initialises all the others: it creates all
+ *  This main class creates and initializes all the others: it creates all
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
@@ -14,8 +14,7 @@
  */
 
 
-public class Game 
-{
+public class Game {
     public static void main(String[] args) {
         Game game = new Game("ThisIsYou");
         game.play();
@@ -29,8 +28,7 @@ public class Game
     /**
      * Create the game and initialize its internal map.
      */
-    public Game(String playerName) 
-    {
+    public Game(String playerName) {
         player = new Player(playerName);
         console = new Console();
         parser = new Parser(console);
@@ -41,8 +39,7 @@ public class Game
      * Create all the rooms and link their exits together.
      * Also creates items specific to certain rooms.
      */
-    private void createRooms()
-    {
+    private void createRooms() {
         Room basement, kitchen, bedroom, garden, shed;
         
         // create the rooms
