@@ -32,7 +32,14 @@ public class Game {
      */
     public Game(String playerName) {
         player = new Player(playerName);
-        Application.launch(Console.class);
+        console = new Console();
+        //Application.launch(Console.class);
+        try {
+			console.start(Console.classStage);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         parser = new Parser(console);
         createRooms();
     }
