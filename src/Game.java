@@ -1,3 +1,5 @@
+import javafx.application.Application;
+
 /**
  *  This class is the main class of "The farmhouse" application. 
  *  "The farmhouse" is a  simple, text based adventure game.  Users 
@@ -30,7 +32,7 @@ public class Game {
      */
     public Game(String playerName) {
         player = new Player(playerName);
-        console = new Console();
+        Application.launch(Console.class);
         parser = new Parser(console);
         createRooms();
     }
@@ -91,14 +93,14 @@ public class Game {
      */
     private void printWelcome()
     {
-        System.out.println();
-        System.out.println("Welcome to The farmhouse!");
-        System.out.println("The farmhouse is a new, mysterious adventure game.");
-        System.out.println("Type '" + parser.getSpecificKey() + "' if you need help.");
-        System.out.println("Also don't forget to scream once in a while ;)");
-        System.out.println();
+        console.printGameInfo("");
+        console.printGameInfo("Welcome to The farmhouse!");
+        console.printGameInfo("The farmhouse is a new, mysterious adventure game.");
+        console.printGameInfo("Type '" + parser.getSpecificKey() + "' if you need help.");
+        console.printGameInfo("Also don't forget to scream once in a while ;)");
+        console.printGameInfo("");
         printLocationInfo();
-        System.out.println();
+        console.printGameInfo("");
     }
     
     /**
