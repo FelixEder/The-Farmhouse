@@ -99,7 +99,7 @@ public class Player
     }
     
     /**
-     * Removes an item from inventory, removes item weigth from player current weigth, and prints out information.
+     * Removes an item from inventory, removes item weight from player current weight, and prints out information.
      * @param invItem The item the player want to remove from inventory.
      */
     public void removeItemFromInventory(String invItem) {

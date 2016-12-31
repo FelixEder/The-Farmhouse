@@ -24,7 +24,6 @@ public class Game {
 
     private Parser parser;
     private Player player;
-    private Room rooms;
     private Console console;
     
     /**
@@ -45,7 +44,8 @@ public class Game {
     }
 
     /**
-     * Create all the rooms and link their exits together.
+     * Create all the roo
+     * ms and link their exits together.
      * Also creates items specific to certain rooms.
      */
     private void createRooms() {

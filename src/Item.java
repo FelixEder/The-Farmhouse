@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 /**
  * This class is responsible for creating the items in the games and to store their unique information in 
  * three different instance fields.
