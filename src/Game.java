@@ -24,22 +24,20 @@ public class Game {
 
     private Parser parser;
     private Player player;
-    private Console console;
+    private ConsoleThread conThread;
     
     /**
      * Create the game and initialize its internal map.
      */
     public Game(String playerName) {
         player = new Player(playerName);
-        console = new Console();
-        //Application.launch(Console.class);
         try {
-			console.start(Console.classStage);
+        	conThread = new ConsoleThread().start();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        parser = new Parser(console);
+        parser = new Parser(conThread);
         createRooms();
     }
 
