@@ -32,7 +32,8 @@ public class Game {
     public Game(String playerName) {
         player = new Player(playerName);
         try {
-        	conThread = new ConsoleThread().start();
+        	conThread = new ConsoleThread();
+        	conThread.start();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
