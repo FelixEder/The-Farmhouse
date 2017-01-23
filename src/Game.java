@@ -238,7 +238,7 @@ public class Game {
      * Prints information regarding current room.
      */
     private void printLocationInfo() {
-        System.out.println(player.getCurrentRoom().getLongDescription());
+    	conThread.printToConsole(player.getCurrentRoom().getLongDescription());
     }
     
     /**
