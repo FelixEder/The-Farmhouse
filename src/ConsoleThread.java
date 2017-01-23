@@ -2,11 +2,18 @@ import javafx.application.Application;
 
 
 public class ConsoleThread extends Thread{
-
-	public ConsoleThread() {
-		 Application.launch(Console.class);
-	}
-	
-	//Add methods for writing to and accessing text from the console.
+	private Console console;
+		public ConsoleThread() {
+			console = new Console();
+			Application.launch(Console.class);
+		}
+		
+		public void printToConsole(String text) {
+			console.printGameInfo(text);
+		}
+		
+		public String textFromConsole() {
+			return console.getTextField();
+		}
 	
 }
