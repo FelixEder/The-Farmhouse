@@ -33,7 +33,6 @@ public class Game {
         	conThread = new ConsoleThread();
         	conThread.start();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         parser = new Parser(conThread);
@@ -171,13 +170,11 @@ public class Game {
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around in a farmhouse.");
-        System.out.println();
-        System.out.println("Your command words are:");
+    	conThread.printToConsole("You are lost. You are alone. You wander");
+    	conThread.printToConsole("around in a farmhouse." + "\n");
+    	conThread.printToConsole("Your command words are:");
         parser.showCommands();
-        System.out.println();
-        System.out.println();
+        conThread.printToConsole("\n" + "\n");
     }
 
     /** 
