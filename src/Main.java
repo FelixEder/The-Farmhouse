@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.application.Application;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -80,7 +81,7 @@ public class Main extends Application {
 		});
 
 		//Settings for the borderPane, can be changed later
-		base.setPrefSize(400, 400);
+		base.setPrefSize(800, 800);
 		base.setStyle("-fx-padding: 10;" +
                 "-fx-border-style: solid inside;" +
                 "-fx-border-width: 2;" +
@@ -90,7 +91,7 @@ public class Main extends Application {
 		
 		Scene scene = new Scene(base);
 		stage.setScene(scene);
-		stage.setTitle("Felix own Console GUI"); //Could later be changed so that the actual game title is displayed here.
+		stage.setTitle("The Farmhouse");
 		stage.show();
 		
 		backgroundThread = new Service<Void>() {
@@ -109,7 +110,18 @@ public class Main extends Application {
 			}
 		};
 		backgroundThread.restart();
-		
+		/* backgroundThread.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+			
+			@Override
+			public void handle(WorkerStateEvent event) {
+				try {
+					stop();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		*/
 	}
 	
 	/**
@@ -119,18 +131,6 @@ public class Main extends Application {
 	public static void printGameInfo(String message) {
 		output.appendText(message + System.lineSeparator());
 	}
-	
-	
-	/**
-	 * Sets the input field to a particular value.
-	 * @param message The text that should be added to the input field.
-	 */
-	/*
-	public void addInputInfo(String message) {
-		input.setText(message);
-	}
-	
-	*/
 	
 	/**
 	 * Waits until the field textToRead is non-null and

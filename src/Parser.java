@@ -34,8 +34,6 @@ public class Parser {
         String word1 = null;
         String word2 = null;
 
-        Main.printGameInfo(">");     // print prompt
-
         inputLine = Main.getTextField();
 
         // Find up to two words on the line.
