@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Application;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,7 +23,9 @@ public class Main extends Application {
 	protected static int historyPointer;
 	protected static String textToRead = null;
 	
-	static Stage classStage = new Stage();
+	//static Stage classStage = new Stage();
+	
+	private Service<Void> backgroundThread;
 	
 	
 	public static void main(String[] args) {
@@ -88,8 +92,24 @@ public class Main extends Application {
 		stage.setScene(scene);
 		stage.setTitle("Felix own Console GUI"); //Could later be changed so that the actual game title is displayed here.
 		stage.show();
-		Game game = new Game("ThisIsYou");
-		game.play();
+		
+		backgroundThread = new Service<Void>() {
+		
+			@Override
+			protected Task<Void> createTask() {
+				return new Task<Void>() {
+					
+					@Override
+					protected Void call() throws Exception {
+						Game game = new Game("ThisIsYou");
+						game.play();
+						return null;
+					}
+				};
+			}
+		};
+		backgroundThread.restart();
+		
 	}
 	
 	/**

@@ -82,10 +82,10 @@ public class Player
             inventory.put(itemToAdd.getName(), itemToAdd);
             currentWeigth += itemToAdd.getWeigth();
             currentRoom.removeItemFromRoom(itemToAdd.getName());
-            System.out.println("You picked up " + itemToAdd.getName() + "." + "\n");
+            Main.printGameInfo("You picked up " + itemToAdd.getName() + "." + "\n");
         }  
         else {
-            System.out.println("The item is to heavy!" + "\n");
+            Main.printGameInfo("The item is to heavy!" + "\n");
         }
     }
     
@@ -106,7 +106,7 @@ public class Player
         Item itemToDrop = inventory.remove(invItem);
         currentRoom.addItem(itemToDrop.getName(), itemToDrop);
         currentWeigth -= itemToDrop.getWeigth();
-        System.out.println("You dropped " + itemToDrop.getName() + "." + "\n");
+        Main.printGameInfo("You dropped " + itemToDrop.getName() + "." + "\n");
     }
     
     /**

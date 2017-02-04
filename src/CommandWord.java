@@ -17,7 +17,7 @@ public enum CommandWord
     private String translation;
     
     /**
-     * Initialise with the corresponding command string and translation.
+     * Initialize with the corresponding command string and translation.
      * @param commandString The command string.
      */
     CommandWord(String commandString, String translated)

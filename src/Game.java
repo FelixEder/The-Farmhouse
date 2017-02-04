@@ -76,7 +76,7 @@ public class Game {
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        Main.printGameInfo("Thank you for playing.  Good bye.");
     }
 
     /**
@@ -107,7 +107,7 @@ public class Game {
 
         switch (commandWord) {
             case UNKNOWN:
-                System.out.println("I don't know what you mean..." + "\n");
+            	Main.printGameInfo("I don't know what you mean..." + "\n");
                 break;
 
             case HELP:
@@ -143,7 +143,7 @@ public class Game {
                 break;
                 
             case ITEMS:
-                System.out.println(player.getInventoryString() + "\n");
+            	Main.printGameInfo(player.getInventoryString() + "\n");
                 break;
         }
         return wantToQuit;
@@ -175,7 +175,7 @@ public class Game {
     {
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
-            System.out.println("Go where?" + "\n");
+        	Main.printGameInfo("Go where?" + "\n");
             return;
         }
 
@@ -184,18 +184,18 @@ public class Game {
         // Try to leave current room.
         Room nextRoom = player.getCurrentRoom().getExit(direction);
         if (nextRoom == null) {
-            System.out.println("There is no door!" + "\n");
+        	Main.printGameInfo("There is no door!" + "\n");
         }
         else if(direction.equals("west")) {
             if(player.isItemInInventory("key")){
-                System.out.println("You use the key to unlock the mysterious door." + "\n");
+            	Main.printGameInfo("You use the key to unlock the mysterious door." + "\n");
                 player.addRoomToStack();
                 player.setCurrentRoom(nextRoom);
                 printLocationInfo();
             }
             else {
-                System.out.println("You arrive at a small cabin in the woods, but its door seems to be locked!");
-                System.out.println("To scared to stay, you decide to head back to the garden" + "\n");
+            	Main.printGameInfo("You arrive at a small cabin in the woods, but its door seems to be locked!");
+            	Main.printGameInfo("To scared to stay, you decide to head back to the garden" + "\n");
             }
         }
         
@@ -214,7 +214,7 @@ public class Game {
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
-            System.out.println("Quit what?" + "\n");
+        	Main.printGameInfo("Quit what?" + "\n");
             return false;
         }
         else {
@@ -243,31 +243,31 @@ public class Game {
     private boolean scream() {
         if(player.isItemInInventory("fork") && !player.hasScreamedWithFork()) {
             player.increaseMaxWeigth();
-            System.out.println("With fork in hand, you scream your lungs out,");
-            System.out.println("with your new-found encouragement, nothing is to heavy for you!" + "\n");
+            Main.printGameInfo("With fork in hand, you scream your lungs out,");
+            Main.printGameInfo("with your new-found encouragement, nothing is to heavy for you!" + "\n");
             return false;
         }
         else if(player.isItemInInventory("toaster")) {
                 if(player.getCurrentRoom().inShed("east")) {
-                    System.out.println("You once again perform your now famous shout");
-                    System.out.println("and throw the toaster with all your might into the inner wall of the shed.");
-                    System.out.println("A secret descending staircase reveals itself behind the fake-wall.");
-                    System.out.println("You go down the stairs to find a family enjoying a movie in their secret underground IMAX-theatre.");
-                    System.out.println("You suddenly remember that you are part of this family");
-                    System.out.println("and only went to the basement to get soda, you must have fallen asleep there.");
-                    System.out.println("Oh well, you sit down in a comfy seat with your family.");
-                    System.out.println("Also, the sunglasses are actually 3D-glasses, enjoy the movie!");
-                    System.out.println("\n" + "The game is now over, you won!");
+                	Main.printGameInfo("You once again perform your now famous shout");
+                	Main.printGameInfo("and throw the toaster with all your might into the inner wall of the shed.");
+                    Main.printGameInfo("A secret descending staircase reveals itself behind the fake-wall.");
+                    Main.printGameInfo("You go down the stairs to find a family enjoying a movie in their secret underground IMAX-theatre.");
+                    Main.printGameInfo("You suddenly remember that you are part of this family");
+                    Main.printGameInfo("and only went to the basement to get soda, you must have fallen asleep there.");
+                    Main.printGameInfo("Oh well, you sit down in a comfy seat with your family.");
+                    Main.printGameInfo("Also, the sunglasses are actually 3D-glasses, enjoy the movie!");
+                    Main.printGameInfo("\n" + "The game is now over, you won!");
                     return true;
                 }
                 else {
-                    System.out.println("You scream, but this time you feel the urge to throw the toaster at something." + "\n");
+                    Main.printGameInfo("You scream, but this time you feel the urge to throw the toaster at something." + "\n");
                     return false;
                 }
             }
                     
         else {
-            System.out.println("You shout in a high-pitched tone, but in the farmhouse no one can hear you scream." + "\n");
+            Main.printGameInfo("You shout in a high-pitched tone, but in the farmhouse no one can hear you scream." + "\n");
             return false;
         }
     }
@@ -279,10 +279,10 @@ public class Game {
     private void back(Command command) {
         if(command.hasSecondWord()) {
             if(command.getSecondWord().equals("back")) {
-                System.out.println("Take it easy, you shouldn't double-back through the house, might step on something!" + "\n");
+                Main.printGameInfo("Take it easy, you shouldn't double-back through the house, might step on something!" + "\n");
             }
             else {
-                System.out.println("Back where?" + "\n");
+                Main.printGameInfo("Back where?" + "\n");
         }
        }
         
@@ -292,7 +292,7 @@ public class Game {
         }
         
         else {
-            System.out.println("You are in room you started in, you tell me how you would like to go back even further..." + "\n" );
+            Main.printGameInfo("You are in room you started in, you tell me how you would like to go back even further..." + "\n" );
         }
     }
     
@@ -303,16 +303,16 @@ public class Game {
      */
     private void pickUpItem(Command command) {
         if(!command.hasSecondWord()) {
-            System.out.println("Take what?" + "\n");
+            Main.printGameInfo("Take what?" + "\n");
         }
         else if(player.getCurrentRoom().isItemInRoom(command.getSecondWord())) {
                 if(command.getSecondWord().equals("key")){
                     if(player.isItemInInventory("sunglasses")){
-                        System.out.println("Since you have put on sunglasses, you can easily see the key midst all the bright light." + "\n");
+                        Main.printGameInfo("Since you have put on sunglasses, you can easily see the key midst all the bright light." + "\n");
                         player.addItemToInventory(command.getSecondWord());
                     }
                     else {
-                        System.out.println("You fumble with your arms, but since the light is so bright, you find jack squat." + "\n");
+                        Main.printGameInfo("You fumble with your arms, but since the light is so bright, you find jack squat." + "\n");
                     }
                     }
                 else {
@@ -320,7 +320,7 @@ public class Game {
                 } 
         }
         else {
-            System.out.println("The mentioned item is not located in the room!" + "\n");
+            Main.printGameInfo("The mentioned item is not located in the room!" + "\n");
         }
     }
     
@@ -330,14 +330,14 @@ public class Game {
      */
     private void dropItems(Command command) {
         if(!command.hasSecondWord()) {
-            System.out.println("Drop what?" + "\n");
+            Main.printGameInfo("Drop what?" + "\n");
         }
         else if(player.isItemInInventory(command.getSecondWord())) {
             player.removeItemFromInventory(command.getSecondWord());
        }
         
         else {
-            System.out.println("The mentioned item is not in your inventory!" + "\n");
+            Main.printGameInfo("The mentioned item is not in your inventory!" + "\n");
         }
     }
 }

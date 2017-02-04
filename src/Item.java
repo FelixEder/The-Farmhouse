@@ -7,14 +7,14 @@
  */
 public class Item
 {
-    // instance variables - the weigth, description and name for each item is stored here.
+    // instance variables - the weight, description and name for each item is stored here.
     private int weigth;
     private String description;
     private String name;
 
     /**
      * The constructor for class Item, takes three parameters.
-     * @param weigth The weigth of the item.
+     * @param weigth The weight of the item.
      * @param name The name of the item.
      * @param description A description of the item.
      */
@@ -34,8 +34,8 @@ public class Item
     }
     
     /**
-     * This method returns the weigth of the item.
-     * @return The weigth of the item.
+     * This method returns the weight of the item.
+     * @return The weight of the item.
      */
     public int getWeigth() {
         return weigth;
