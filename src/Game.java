@@ -15,27 +15,15 @@
 
 
 public class Game {
-    public static void main(String[] args) {
-        Game game = new Game("ThisIsYou");
-        game.play();
-    }
-
     private Parser parser;
     private Player player;
-    private ConsoleThread conThread;
     
     /**
      * Create the game and initialize its internal map.
      */
     public Game(String playerName) {
         player = new Player(playerName);
-        try {
-        	conThread = new ConsoleThread();
-        	conThread.start();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        parser = new Parser(conThread);
+        parser = new Parser();
         createRooms();
     }
 
@@ -54,7 +42,7 @@ public class Game {
         garden = new Room("in a garden. It's in the middle of a starry night, so why is the garden lights on?");
         shed = new Room("in a fragile old shed, the inside of it seems a lot larger than it should be.");
         
-         // initialise room exits
+         // Initialize room exits
         basement.setExit("up", kitchen);
         kitchen.setExit("down", basement);
         kitchen.setExit("up", bedroom);
@@ -96,14 +84,14 @@ public class Game {
      */
     private void printWelcome()
     {
-    	conThread.printToConsole("");
-    	conThread.printToConsole("Welcome to The farmhouse!");
-    	conThread.printToConsole("The farmhouse is a new, mysterious adventure game.");
-    	conThread.printToConsole("Type '" + parser.getSpecificKey() + "' if you need help.");
-    	conThread.printToConsole("Also don't forget to scream once in a while ;)");
-    	conThread.printToConsole("");
+    	Main.printGameInfo("");
+    	Main.printGameInfo("Welcome to The farmhouse!");
+    	Main.printGameInfo("The farmhouse is a new, mysterious adventure game.");
+    	Main.printGameInfo("Type '" + parser.getSpecificKey() + "' if you need help.");
+    	Main.printGameInfo("Also don't forget to scream once in a while ;)");
+    	Main.printGameInfo("");
         printLocationInfo();
-        conThread.printToConsole("");
+        Main.printGameInfo("");
     }
     
     /**
@@ -170,11 +158,11 @@ public class Game {
      */
     private void printHelp() 
     {
-    	conThread.printToConsole("You are lost. You are alone. You wander");
-    	conThread.printToConsole("around in a farmhouse." + "\n");
-    	conThread.printToConsole("Your command words are:");
+    	Main.printGameInfo("You are lost. You are alone. You wander");
+    	Main.printGameInfo("around in a farmhouse." + "\n");
+    	Main.printGameInfo("Your command words are:");
         parser.showCommands();
-        conThread.printToConsole("\n" + "\n");
+        Main.printGameInfo("\n" + "\n");
     }
 
     /** 
@@ -238,7 +226,7 @@ public class Game {
      * Prints information regarding current room.
      */
     private void printLocationInfo() {
-    	conThread.printToConsole(player.getCurrentRoom().getLongDescription());
+    	Main.printGameInfo(player.getCurrentRoom().getLongDescription());
     }
     
     /**

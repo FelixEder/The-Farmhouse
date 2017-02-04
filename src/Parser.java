@@ -18,14 +18,12 @@ import java.util.Scanner;
  */
 public class Parser {
     private CommandWords commands;  // holds all valid command words
-    private ConsoleThread conThread;
 
     /**
      * Create a parser to read from the terminal window.
      */
-    public Parser(ConsoleThread conThread) {
+    public Parser() {
         commands = new CommandWords();
-        this.conThread = conThread;
     }
 
     /**
@@ -36,9 +34,9 @@ public class Parser {
         String word1 = null;
         String word2 = null;
 
-        conThread.printToConsole(">");     // print prompt
+        Main.printGameInfo(">");     // print prompt
 
-        inputLine = conThread.textFromConsole();
+        inputLine = Main.getTextField();
 
         // Find up to two words on the line.
 		@SuppressWarnings("resource")
