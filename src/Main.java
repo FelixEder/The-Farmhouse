@@ -1,4 +1,8 @@
-
+/**
+ * The main class of "The Farmhouse", a short text-based adventure by Felix Eder.
+ * It was originally made as a school exercise, but I have since expanded it and added a new
+ * GUI written in JavaFX in order to play the game on any computer.
+ */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,6 +99,7 @@ public class Main extends Application {
 		stage.setTitle("The Farmhouse");
 		stage.show();
 		
+		//Starts a new Javafx thread and launches the game on it.
 		backgroundThread = new Service<Void>() {
 		
 			@Override
@@ -111,6 +116,7 @@ public class Main extends Application {
 			}
 		};
 		backgroundThread.restart();
+		//When the game is completed on the other thread, this is called.
 		backgroundThread.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			
 			@Override
