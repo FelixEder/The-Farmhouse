@@ -158,8 +158,7 @@ public class Game {
      */
     private void printHelp() 
     {
-    	Main.printGameInfo("You are lost. You are alone. You wander");
-    	Main.printGameInfo("around in a farmhouse." + "\n");
+    	Main.printGameInfo("You are lost. You are alone. You wander around in a farmhouse.");
     	Main.printGameInfo("Your command words are:");
         parser.showCommands();
         Main.printGameInfo("\n" + "\n");

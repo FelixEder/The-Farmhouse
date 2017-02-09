@@ -110,10 +110,11 @@ public class Main extends Application {
 			}
 		};
 		backgroundThread.restart();
-		/* backgroundThread.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+		backgroundThread.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			
 			@Override
 			public void handle(WorkerStateEvent event) {
+				System.out.println("Game has stopped!");
 				try {
 					stop();
 				} catch (Exception e) {
@@ -121,7 +122,6 @@ public class Main extends Application {
 				}
 			}
 		});
-		*/
 	}
 	
 	/**

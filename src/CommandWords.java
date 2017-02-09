@@ -65,12 +65,12 @@ public class CommandWords
     /**
      * Print all valid commands to System.out.
      */
-    public void showAll() 
-    {
+    public void showAll() {	
+    	String itemString = "";
         for(String command : validCommands.keySet()) {
-        	Main.printGameInfo(command + "  ");
+        	itemString += command + "   ";
         }
-        Main.printGameInfo("/n");
+        	Main.printGameInfo(itemString);
     }
     
     /**
