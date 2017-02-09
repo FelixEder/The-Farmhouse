@@ -13,7 +13,8 @@ The exercise gave us a working base and the instructed us how to add to it.
 The story and locations are all written by me but the parser and 
 command classes were partly pre-made.
 
-Some of the documentation of the original exercise:
+
+##### Some of the documentation of the original exercise:
 
 Project: The Farmhouse
 Authors: (Felix Eder)
