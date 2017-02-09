@@ -97,7 +97,6 @@ public class Game {
     	Main.printGameInfo("Also don't forget to scream once in a while ;)");
     	Main.printGameInfo("");
         printLocationInfo();
-        Main.printGameInfo("");
     }
     
     /**
@@ -167,7 +166,7 @@ public class Game {
     	Main.printGameInfo("You are lost. You are alone. You wander around in a farmhouse.");
     	Main.printGameInfo("Your command words are:");
         parser.showCommands();
-        Main.printGameInfo("\n");
+        Main.printGameInfo("");
     }
 
     /** 
@@ -263,6 +262,12 @@ public class Game {
                     Main.printGameInfo("Oh well, you sit down in a comfy seat with your family.");
                     Main.printGameInfo("Also, the sunglasses are actually 3D-glasses, enjoy the movie!");
                     Main.printGameInfo("\n" + "The game is now over, you won!");
+                    Main.setInputEditable(false);
+                    try {
+						Thread.sleep(20000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
                     return true;
                 }
                 else {
