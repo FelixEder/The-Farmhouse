@@ -55,7 +55,7 @@ public class Room
     public String getExitString() {
         String returnString = "Exits:";
         for(String key : exits.keySet()) {
-            returnString += " " + key;
+            returnString += "   " + key;
         }
         return returnString;
     }
