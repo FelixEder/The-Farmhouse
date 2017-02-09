@@ -77,6 +77,12 @@ public class Game {
             finished = processCommand(command);
         }
         Main.printGameInfo("Thank you for playing.  Good bye.");
+        Main.setInputEditable(false);
+        try {
+			Thread.sleep(2500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -161,7 +167,7 @@ public class Game {
     	Main.printGameInfo("You are lost. You are alone. You wander around in a farmhouse.");
     	Main.printGameInfo("Your command words are:");
         parser.showCommands();
-        Main.printGameInfo("\n" + "\n");
+        Main.printGameInfo("\n");
     }
 
     /** 

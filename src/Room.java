@@ -17,7 +17,6 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
-    private Item roomItems;
     private HashMap<String, Item> itemsInRoom;
     
     /**

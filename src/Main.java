@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -114,14 +115,21 @@ public class Main extends Application {
 			
 			@Override
 			public void handle(WorkerStateEvent event) {
-				System.out.println("Game has stopped!");
 				try {
-					stop();
+					Platform.exit();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+	
+	/**
+	 * A toggle to make the input field editable or non-editable.
+	 * @param option The answer to the question, "should the input field be set to editable?".
+	 */
+	public static void setInputEditable(boolean option) {
+		input.setEditable(option);
 	}
 	
 	/**
